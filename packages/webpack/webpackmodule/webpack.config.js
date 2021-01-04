@@ -12,6 +12,7 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single'
   },
+  devtool: false,
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackManifestPlugin()
