@@ -1,8 +1,11 @@
-export default function d() {
+function d() {
   console.log('module d')
 }
 
-export function a() {
-  console.log('a')
+// function a() {
+//   console.log('a')
+// }
+
+module.exports = {
+  d
 }
-d()
