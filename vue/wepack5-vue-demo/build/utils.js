@@ -12,4 +12,5 @@ const resolve = function(dir) {
   return path.join(__dirname, '..', dir);
 };
 
+
 exports.resolve = resolve;

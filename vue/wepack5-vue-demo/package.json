@@ -9,15 +9,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "core-js": "^3.8.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.2",
     "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
-    "@vue/babel-preset-app": "^4.5.9",
+    "@vue/babel-plugin-jsx": "^1.0.0",
     "@vue/compiler-sfc": "^3.0.5",
     "babel-loader": "^8.2.2",
     "babel-preset-typescript-vue3": "^2.0.7",
@@ -37,7 +41,7 @@
     "vue-loader": "^16.1.2",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^4.0.0-beta.0",
+    "webpack-dev-server": "3.11.1",
     "webpack-manifest-plugin": "^3.0.0",
     "webpack-merge": "^5.7.3",
     "webpack-nano": "^1.1.1"

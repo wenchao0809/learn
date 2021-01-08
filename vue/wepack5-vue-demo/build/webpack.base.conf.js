@@ -5,14 +5,18 @@ const { assetsPath, resolve } = require('./utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: [
+    // '@babel/polyfill',
+    'core-js', 
+    './src/main.ts'],
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      'components': path.resolve(__dirname, '../src/components')
     },
     extensions: ['.wasm', ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json", 'jsx', '.vue'],
   },
@@ -24,13 +28,30 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
+        include: [
+          resolve('src'), 
+          resolve('tests'),
+          resolve('/node_modules/webpack-dev-server/client'), 
+          resolve('/node_modules/@vue'), 
+          resolve('/node_modules/vue'),
+          // resolve('/node_modules')
+        ],
         loader: 'babel-loader'
       },
       {
-        test: /\.ts$/,
+        test: /\.(ts)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: ['babel-loader',  {
+          loader: 'ts-loader',
+          options: {
+              appendTsxSuffixTo: [/\.vue$/],
+              transpileOnly: true
+          }
+      }]
+        // options: {
+        //   appendTsSuffixTo: ['/.vue$/']
+        // }
       },
       {
         test: /\.scss$/,
