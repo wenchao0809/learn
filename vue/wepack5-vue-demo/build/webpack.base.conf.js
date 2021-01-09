@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: [
     // '@babel/polyfill',
-    'core-js', 
     './src/main.ts'],
   output: {
     filename: '[name].[contenthash].js',
@@ -32,9 +31,9 @@ module.exports = {
         include: [
           resolve('src'), 
           resolve('tests'),
-          resolve('/node_modules/webpack-dev-server/client'), 
-          resolve('/node_modules/@vue'), 
-          resolve('/node_modules/vue'),
+          // resolve('/node_modules/webpack-dev-server/client'), 
+          // resolve('/node_modules/@vue'), 
+          // resolve('/node_modules/vue'),
           // resolve('/node_modules')
         ],
         loader: 'babel-loader'

@@ -3,7 +3,7 @@ module.exports = {
     '@babel/preset-typescript',
     [
       '@babel/preset-env',
-      // { useBuiltIns: 'entry', corejs: { version: 3 } }
+      { useBuiltIns: 'usage', corejs: { version: 3 } }
     ]
     // "@babel/preset-react"
     // "babel-preset-typescript-vue3",
