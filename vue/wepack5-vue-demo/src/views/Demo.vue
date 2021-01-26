@@ -1,6 +1,7 @@
 <template>
 <div class="demo">
   <h1>demo {{id}}</h1>
+  <img src="@/assets/images/feiji.png" />
   <TestComponent></TestComponent>
 </div>  
 </template>

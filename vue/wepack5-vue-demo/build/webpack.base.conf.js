@@ -39,7 +39,18 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.(ts)x?$/,
+        test: /\.ts?$/,
+        exclude: /node_modules/,
+        use: ['babel-loader',  {
+          loader: 'ts-loader',
+          options: {
+              appendTsSuffixTo: [/\.vue$/],
+              transpileOnly: true
+          }
+        }]
+      },
+      {
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: ['babel-loader',  {
           loader: 'ts-loader',
@@ -47,10 +58,7 @@ module.exports = {
               appendTsxSuffixTo: [/\.vue$/],
               transpileOnly: true
           }
-      }]
-        // options: {
-        //   appendTsSuffixTo: ['/.vue$/']
-        // }
+        }]
       },
       {
         test: /\.scss$/,
@@ -72,27 +80,24 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: assetsPath('img/[name].[hash:7].[ext]')
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/images/[hash][ext]'
         }
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: assetsPath('media/[name].[hash:7].[ext]')
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/media/[hash][ext]'
         }
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: assetsPath('fonts/[name].[hash:7].[ext]')
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/font/[hash][ext]'
         }
       },
     ]

@@ -14,15 +14,16 @@ var (
 
 func main() {
 	pool := make(chan int, 1000)
-	wg := &sync.WaitGroup{}
-	for i := 0; i < 100000; i++ {
-		wg.Add(1)
-		go work(pool, wg)
-		//time.Sleep(time.Second * 1)
-		pool <- i
-		//fmt.Println(i)
-	}
-	wg.Wait()
+	pool <- 2
+	// wg := &sync.WaitGroup{}
+	// for i := 0; i < 100000; i++ {
+	// 	wg.Add(1)
+	// 	go work(pool, wg)
+	// 	//time.Sleep(time.Second * 1)
+	// 	pool <- i
+	// 	//fmt.Println(i)
+	// }
+	// wg.Wait()
 }
 
 func work(pool <-chan int, wg *sync.WaitGroup) {
