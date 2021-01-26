@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/ET912/learn/algorithm/gosort"
@@ -12,38 +13,26 @@ type CompareInt struct {
 }
 
 // Compare -
-func (a CompareInt) Compare(b interface{}) int {
-	var c gosort.CompareAble
-	c = b
-	if b.(CompareInt) {
-		return a.Value - b.Value
-
+func (a CompareInt) Compare(b gosort.CompareAble) (int, error) {
+	c, ok := b.(CompareInt)
+	if !ok {
+		return 0, errors.New("un support type")
 	}
-	return a.Value
+	return a.Value - c.Value, nil
 }
-
-type Compare struct {
-	Value int
-}
-
-// Compare -
-func (a Compare) Compare() int {
-	return a.Value
-}
-
-// func (a CompareInt) Test() int {
-// 	return 1
-// }
 
 func main() {
-	// var w io.Writer
-	// w = os.Stdout
-	// f := w.(*os.File)
-	// success: f == os.Stdout
-	// c := w.(*bytes.Buffer)
-	var x gosort.CompareAble
-	x = CompareInt{1}
-	// gosort.MergeSort(x)
-	f := x.(Compare)
-	fmt.Printf("%v", f)
+	x := make([]gosort.CompareAble, 5)
+	y := []CompareInt{
+		{Value: 2},
+		{Value: 4},
+		{Value: 2},
+		{Value: 7},
+		{Value: 9},
+	}
+	for i, c := range y {
+		x[i] = c
+	}
+	z := gosort.MergeSort(x)
+	fmt.Printf("%v", z)
 }

@@ -1,7 +1,7 @@
 package gosort
 
 type CompareAble interface {
-	Compare(b interface{}) int
+	Compare(b CompareAble) (int, error)
 }
 type TestInterface interface {
 	Test() int
