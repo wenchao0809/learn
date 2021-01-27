@@ -1,11 +1,11 @@
 package gosort
 
 // MergeSort 归并排序 (a interface{}, b interface{})
-func MergeSort(a []CompareAble) []CompareAble {
+func MergeSort(a SortAble) SortAble {
 	return sort(a)
 }
 
-func sort(a []CompareAble) []CompareAble {
+func sort(a SortAble) SortAble {
 	l := len(a)
 	if l < 2 {
 		return a
@@ -16,7 +16,7 @@ func sort(a []CompareAble) []CompareAble {
 	return merge(left, right)
 }
 
-func merge(l []CompareAble, r []CompareAble) []CompareAble {
+func merge(l SortAble, r SortAble) SortAble {
 	i, j := 0, 0
 	m, n := len(l), len(r)
 	var res []CompareAble
