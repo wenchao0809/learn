@@ -20,5 +20,6 @@ func main() {
 		x[i] = c
 	}
 	z := x.Sort(gosort.MergeSort)
+	fmt.Printf("CountReversePair=%d\n", gosort.CountReversePair(x))
 	fmt.Printf("%v", z)
 }
