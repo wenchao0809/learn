@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    webpack5-vue3.02
-    <router-view></router-view>
+    webpack5-vue3.03
+    <router-view />
   </div>
 </template>
