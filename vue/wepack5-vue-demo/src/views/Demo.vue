@@ -40,12 +40,11 @@ export default defineComponent({
       testRef,
       id
     }
-  }
-});
+  })
 </script>
 
 <style lang="css" scoped>
-.demo {
-  color: red;
-}
+  .demo {
+    color: red;
+  }
 </style>

@@ -1,0 +1,6 @@
+.inline-box {
+  width: 50px;
+}
+.inline-level-box {
+  display: inline-block;
+}
