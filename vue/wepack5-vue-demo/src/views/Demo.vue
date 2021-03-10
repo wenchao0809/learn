@@ -31,7 +31,7 @@
         store.commit('CHANGE_PROJECT', { id: 1 })
         testReactiveObject = reactive({ x: 2 })
       }, 3000)
-      let testReactiveObject = reactive({ x: 1 })
+      testReactiveObject = reactive({ x: 1 })
       watchEffect(
         () => {
           console.log('watch effect id --->>>', id.value)
