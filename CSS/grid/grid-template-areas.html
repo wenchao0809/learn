@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .grid {
+      display: grid;
+      width: 100vw;
+      height: 100vh;
+      /* grid-template-areas: 
+      "h h h h"
+      "l c c r"
+      "l f f f"; */
+      grid-template-columns: repeat(auto-fill, 4.166666%);
+      grid-template-rows: repeat(auto-fill, 4.16666666%);
+      background-color: salmon;
+      /* grid-template-columns: 100px 20% 50px 200px;
+      grid-template-rows: 100px 200px 200px; */
+    }
+    .one {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+      background-color: gold;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="one"></div>
+  </div>
+</body>
+</html>

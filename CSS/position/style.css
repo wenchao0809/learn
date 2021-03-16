@@ -1,0 +1,60 @@
+.parent {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  overflow: scroll;
+  background-color: aquamarine;
+}
+
+.child {
+  position: absolute;
+  /* right: -20px;
+  bottom: 0; */
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+  background-color: cadetblue;
+}
+
+.child2 {
+  position: absolute;
+  /* left: 0; */
+  /* bottom: 0; */
+  /* box-sizing: border-box; */
+  margin: auto;
+  left: auto;
+  right: auto;
+  /* bottom: auto;
+  top: auto; */
+  /* height: 100%; */
+  padding: 20px;
+  /* margin: 10px; */
+  /* height: 100px; */
+  width: 100px;
+  background-color: cadetblue;
+}
+
+.child3 {
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+  /* box-sizing: border-box; */
+  margin: auto;
+  /* left: 0;
+  right: 0; */
+  /* height: 100%; */
+  padding: 20px;
+  /* margin: 10px; */
+  /* height: 100px; */
+  width: 20%;
+  background-color: forestgreen;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

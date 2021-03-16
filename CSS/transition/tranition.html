@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .transition {
+      height: 200px;
+      width: 200px;
+      background-color: gold;
+      transition: background-color 200ms ease-in 50ms;
+    }
+    .transition:hover {
+      background-color: hotpink;
+    }
+    .nav > li {
+      display: inline-block;
+    }
+    .nav  li ul {
+      transition: transform 500ms ease-in 20ms;
+      transform: scale(1, 0);
+      transform-origin: top center;
+    }
+    .nav li:hover ul {
+      /* transition: transform 500ms ease-in 20ms; */
+      transform: scale(1, 1);
+
+    }
+  </style>
+</head>
+<body>
+  <div class="transition"></div>
+  <ul class="nav">
+    <li>1<ul>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+    </ul></li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</body>
+</html>
