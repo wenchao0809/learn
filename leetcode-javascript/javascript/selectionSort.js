@@ -13,16 +13,10 @@ n-1趟结束，数组有序化了。
 function selectionSort(nums) {
   const l = nums.length
   for (let i = 0; i < l - 1; i++) {
-    let minIndex = i;
-    let minValue = nums[i]
-    let j = i + 1
-    for (;j < l; j++) {
-      if (minValue > nums[j]) {
-        minValue = nums[j]
-        minIndex = j
-      }
-    }
-    excha(nums, i, minIndex)
+    let min = i;    
+    for (let j = i + 1; j < l; j++)
+      if (nums[j] < nums[min]) min =  j
+    excha(nums, i, min)
   }
 }
 

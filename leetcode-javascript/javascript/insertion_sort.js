@@ -16,16 +16,17 @@
 function insertionSort(nums) {
   const l = nums.length
   for (let i = 1; i < l; i++) {
-    let j = i - 1
-    let value = nums[i]
-    while(j-- >= 0) {
-      if (nums[j] > value) {
-        nums[j+1] = nums[j]
-      } else {
-        nums[j + 1] = value
-        break
-      }
-    }
+    for (let j = i; j > 0 && nums[j] < nums[j - 1]; j--)
+      excha(nums, j, j - 1)
+    // while(j >= 0) {
+    //   if (nums[j] > value) {
+    //     excha(nums,j, j+1)
+    //     j--
+    //   } else {
+    //     nums[j + 1] = value
+    //     break
+    //   }
+    // }
   }
   return nums
 }
