@@ -40,7 +40,7 @@ export default defineComponent({
       testRef,
       id
     }
-  })
+  }})
 </script>
 
 <style lang="css" scoped>
