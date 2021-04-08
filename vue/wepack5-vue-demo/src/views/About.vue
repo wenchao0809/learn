@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, reactive, watchEffect } from 'vue'
+  import { defineComponent, reactive, watchEffect, ref } from 'vue'
   export default defineComponent({
     name: 'About',
     components: {},
@@ -17,12 +17,20 @@
       watchEffect(() => {
         debugger
         return 'x' in fool
-      }) 
+      })
       setTimeout(() => {
         a[2] = 100
         a.unshift(1)
         fool.x = 2
-      }, 10000);
+      }, 10000)
+      const arr = ref([])
+
+      watchEffect(() => {
+        console.log('Array: ', arr.value)
+      })
+
+      arr.value.push('test') // doesn't log
+
       return {
         fool,
         a
