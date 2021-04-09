@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, reactive, watchEffect } from 'vue'
+  import { defineComponent, reactive, watchEffect  } from 'vue'
   export default defineComponent({
     name: 'About',
     components: {},
