@@ -15,4 +15,11 @@ var largestNumber = function(nums) {
   return nums.join('');
 };
 
-console.log(largestNumber([3,30,34,5,9]))
+var largestNumber2 = function(nums) {
+  nums.sort((x, y) => (''+y+x) - (''+x+y))
+  if (nums[0] === 0) {
+    return '0';
+  }
+  return nums.join('');
+}
+console.log(largestNumber2([3,30,34,5,9]))
