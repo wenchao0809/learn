@@ -77,6 +77,24 @@ function verify(root, i, j) {
   return p === j && verify(root, i, m) && verify(root, m + 1, j - 1)
 }
 
+/**
+ *  单调栈 后续遍历是 左、右、跟， 
+ * 后续遍历的反序遍历是  跟、右、左、根据搜索树的性质 满足单调性
+ * 从后向前遍历入栈元素， 如果遇到递减序列说明遍历到了左子树， 此时出栈求出根节点如果存在元素 大于跟节点根据搜索树的性质则不满足。
+ * @param {Number[]} root 
+ * @returns {Boolean}
+ */
+function verifyPostorder2(root) {
+  let pre = Number.MAX_SAFE_INTEGER, stack = []
+  for (let i = root.length - 1; i >= 0; i--) {
+    if (root[i] > pre) return false
+    while (stack.length > 0 && stack[stack.length - 1] > root[i]) {
+      pre = stack.pop()
+    }
+    stack.push(root[i])
+  }
+  return true
+}
 
-console.log(verifyPostorder([1,6,3,2,5]))
-console.log(verifyPostorder([1,3,2,6,5]))
+console.log(verifyPostorder2([1,6,3,2,5]))
+console.log(verifyPostorder2([1,3,2,6,5]))
