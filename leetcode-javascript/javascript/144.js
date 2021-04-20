@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var preorderTraversal = function(root) {
+var preorderTraversal2 = function(root) {
   const queue = [root]
   const vals = []
   if (!root) return vals
@@ -22,4 +22,8 @@ var preorderTraversal = function(root) {
   return vals
 };
 
+var preorderTraversal = function(root) {
+  if (!root) return []
+  return [root.val, ...preorderTraversal(root.left), ...preorderTraversal(root.right)]
+};
 console.log(preorderTraversal(new TreeNode(3, new TreeNode(1), new TreeNode(2))))
