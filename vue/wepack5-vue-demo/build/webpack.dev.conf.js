@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const BaseConfig = require('./webpack.base.conf')
 
-module.exports = merge(BaseConfig , {
+module.exports = merge(BaseConfig, {
   mode: 'development',
   devServer: {
     historyApiFallback: true,
@@ -13,19 +13,21 @@ module.exports = merge(BaseConfig , {
     // quiet: true,
     // disableHostCheck: true,
     host: '0.0.0.0',
-    overlay: {
-      errors: true
-    },
+    // overlay: {
+    //   errors: true
+    // },
     // proxy: config.dev.proxyTable,
     // https: true,
+    client: {
+      overlay: {
+        errors: true
+      }
+    },
     hot: true,
     port: 8091
   },
   module: {
-    rules: [
-    ]
+    rules: []
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 })

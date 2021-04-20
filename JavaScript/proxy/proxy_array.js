@@ -4,4 +4,6 @@ let proxy = new Proxy(x, { set(target, key, value) {
   return Reflect.set(target, key, value)
 } })
 
-proxy.unshift('121')
+// proxy.unshift('121')
+
+x.length = 2

@@ -15,7 +15,7 @@ b.a()
 console.log(b.hasOwnProperty('a'))
 /**
  * Object.getOwnPropertyNames(proxy) 可以拦截 for in getOwnPropertyNames Object.keys()  Object.getOwnPropertySymbols(proxy)
- * 虽然可以拦截 for in 但是此时 要注意的是 Reflect.ownKeys(target)只会返回自由属性， 不会返回原型链继承的属性
+ * 虽然可以拦截 for in 但是此时 要注意的是 Reflect.ownKeys(target)只会返回自有属性， 不会返回原型链继承的属性
  * 
  */
 

@@ -41,7 +41,7 @@ function match(t, p) {
   return j === m ? i - j : -1
 }
 
-export function indexOf(s, fromIndex = 0) {
+function indexOf(s, fromIndex = 0) {
   fromIndex = 0 > fromIndex  
     ? this.length + fromIndex > 0
       ? this.length + fromIndex
@@ -51,3 +51,14 @@ export function indexOf(s, fromIndex = 0) {
   const i = match(this.slice(fromIndex), s)
   return i > 0 ? fromIndex + i : i
 }
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  return match(haystack, needle)
+};
+
+console.log(strStr('hello', 'll'))

@@ -15,7 +15,6 @@
       //   delete fool.x
       // }, 10000);
       watchEffect(() => {
-        debugger
         return 'x' in fool
       })
       setTimeout(() => {
@@ -26,7 +25,9 @@
       const arr = ref([])
 
       watchEffect(() => {
-        console.log('Array: ', arr.value)
+        // console.log('Array: ', arr.value)
+        console.log(fool.x)
+        fool.x = 10
       })
 
       arr.value.push('test') // doesn't log
