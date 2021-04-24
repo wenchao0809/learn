@@ -24,7 +24,7 @@ module.exports = merge(BaseConfig, {
       }
     },
     hot: true,
-    port: 8091
+    port: 8090
   },
   module: {
     rules: []
