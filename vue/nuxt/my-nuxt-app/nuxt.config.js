@@ -39,5 +39,12 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
+  },
+  server: {
+    port: 3002,
+    host: '0.0.0.0'
+  },
+  router: {
+    base: '/test'
   }
 }

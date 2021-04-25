@@ -10,6 +10,8 @@
   "author": "dwc",
   "license": "ISC",
   "dependencies": {
-    "connect": "^3.7.0"
+    "connect": "^3.7.0",
+    "content-disposition": "^0.5.3",
+    "koa": "^2.13.1"
   }
 }
