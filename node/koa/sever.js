@@ -32,7 +32,7 @@ app.use(async(ctx) => {
  }
  // 测试koa redirect
  if (ctx.url.startsWith('/redirect')) {
-   ctx.status = 307
+   ctx.status = 300
    ctx.redirect('/test/redirect')
  }
   // 测试koa redirect back
@@ -42,7 +42,7 @@ app.use(async(ctx) => {
   }
   // 测试koa redirect
   if (ctx.url.startsWith('/test/redirect')) {
-   ctx.body = 'redirect'
+  //  ctx.body = 'redirect'
   }
 })
 app.listen(3000)
