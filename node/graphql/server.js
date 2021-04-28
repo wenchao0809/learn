@@ -1,7 +1,8 @@
 const Koa = require('koa');
 const { ApolloServer, gql } = require('apollo-server-koa');
+import { wt } from './wt'
 
-
+wt()
 async function startApolloServer() {
   // Construct a schema, using GraphQL schema language
   const typeDefs = gql`
