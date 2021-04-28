@@ -1,12 +1,13 @@
 const Koa = require('koa');
 const { ApolloServer, gql } = require('apollo-server-koa');
 
+
 async function startApolloServer() {
   // Construct a schema, using GraphQL schema language
   const typeDefs = gql`
     type Query {
       hello: String,
-      hello2: String
+      hello2: Int
     }
   `;
 
@@ -14,7 +15,7 @@ async function startApolloServer() {
   const resolvers = {
     Query: {
       hello: () => 'Hello world!',
-      hello2: () => 'fdf'
+      hello2: () => 31
     },
   };
 
