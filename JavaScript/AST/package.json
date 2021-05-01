@@ -1,0 +1,17 @@
+{
+  "name": "ast",
+  "version": "1.0.0",
+  "description": "learn ast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependence": {},
+  "author": "dwc",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "globby": "^11.0.3",
+    "jscodeshift": "^0.11.0"
+  }
+}

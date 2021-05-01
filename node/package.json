@@ -1,0 +1,37 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "learn node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon --exec babel-node ./graphql/server.js",
+    "build-babel": "babel -d ./build ./graphql/server.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "dwc",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "apollo-server-koa": "^2.23.0",
+    "babel-loader": "^8.2.2",
+    "benchmark": "^2.1.4",
+    "connect": "^3.7.0",
+    "content-disposition": "^0.5.3",
+    "graphql": "^15.5.0",
+    "koa": "^2.13.1",
+    "koa-compress": "^5.0.1",
+    "nodemon": "^2.0.7",
+    "webpack": "^5.36.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/runtime": "^7.13.17"
+  }
+}
