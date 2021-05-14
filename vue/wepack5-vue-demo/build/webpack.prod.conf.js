@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const BaseConfig = require('./webpack.base.conf')
-const TerserPlugin = require("terser-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(BaseConfig, {
   mode: 'development',
@@ -36,9 +36,5 @@ module.exports = merge(BaseConfig, {
       }
     }
   },
-  plugins: [
-    new WebpackManifestPlugin(),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin()
-  ]
+  plugins: [new WebpackManifestPlugin(), new CleanWebpackPlugin(), new MiniCssExtractPlugin()]
 })

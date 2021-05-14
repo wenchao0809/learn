@@ -65,6 +65,6 @@ var deserialize = function(data) {
  */
 const tree = new TreeNode(1)
 tree.left = new TreeNode(2)
-console.log(serialize(tree))
-const decodeTree = deserialize("['1', '2', 'null', 'null', 'null']")
-console.log(decodeTree)
+console.log(serialize(deserialize("[1,2,3,null,null,4,5]")))
+// const decodeTree = deserialize("['1', '2', 'null', 'null', 'null']")
+// console.log(decodeTree)

@@ -1,23 +1,24 @@
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const { assetsPath, resolve } = require('./utils');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { assetsPath, resolve } = require('./utils')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: [
     // '@babel/polyfill',
-    './src/main.ts'],
+    './src/main.ts'
+  ],
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist')
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      'components': path.resolve(__dirname, '../src/components')
+      components: path.resolve(__dirname, '../src/components')
     },
-    extensions: ['.wasm', ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json", 'jsx', '.vue'],
+    extensions: ['.wasm', '.ts', '.tsx', '.mjs', '.cjs', '.js', '.json', 'jsx', '.vue']
   },
   module: {
     rules: [
@@ -29,10 +30,10 @@ module.exports = {
         test: /\.js$/,
         // exclude: /node_modules/,
         include: [
-          resolve('src'), 
-          resolve('tests'),
-          // resolve('/node_modules/webpack-dev-server/client'), 
-          // resolve('/node_modules/@vue'), 
+          resolve('src'),
+          resolve('tests')
+          // resolve('/node_modules/webpack-dev-server/client'),
+          // resolve('/node_modules/@vue'),
           // resolve('/node_modules/vue'),
           // resolve('/node_modules')
         ],
@@ -41,42 +42,48 @@ module.exports = {
       {
         test: /\.ts?$/,
         exclude: /node_modules/,
-        use: ['babel-loader',  {
-          loader: 'ts-loader',
-          options: {
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
               appendTsSuffixTo: [/\.vue$/],
               transpileOnly: true
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader',  {
-          loader: 'ts-loader',
-          options: {
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
               appendTsxSuffixTo: [/\.vue$/],
               transpileOnly: true
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.scss$/,
-        use: [ 
+        use: [
           'style-loader',
           {
-            loader: 'css-loader', 
-          } , 
-          'sass-loader' 
+            loader: 'css-loader'
+          },
+          'sass-loader'
         ]
       },
       {
         test: /\.css$/,
-        use: [ 
+        use: [
           'style-loader',
           {
             loader: 'css-loader'
-          } 
+          }
         ]
       },
       {
@@ -99,7 +106,7 @@ module.exports = {
         generator: {
           filename: 'static/font/[hash][ext]'
         }
-      },
+      }
     ]
   },
   plugins: [
