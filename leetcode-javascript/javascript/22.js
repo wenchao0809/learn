@@ -57,7 +57,7 @@ var generateParenthesis = function(n) {
  * @param {number} n
  * @return {string[]}
  */
- var generateParenthesis = function(n) {
+ var generateParenthesis2 = function(n) {
   let res = [];
    const help = (cur, left, right) => {
      if (cur.length === 2 * n) {
@@ -74,4 +74,23 @@ var generateParenthesis = function(n) {
    help("", 0, 0);
    return res;
  };
-console.log(generateParenthesis(2))
+
+ 
+ /**
+  * @description 迭代解法
+  * @param {number} n
+  * @return {string[]}
+  */
+var generateParenthesis3 = function(n) {
+  let res = [];
+  const total = 2 * n
+  const stack = [['', 0, 0]]
+  while (stack.length > 0) {
+    const [cur, left, right] = stack.pop()
+    if (cur.length === total) res.push(cur)
+    if (left < n) stack.push([cur + '(', left + 1, right])
+    if (right < left) stack.push([cur + ')', left, right + 1])
+  }
+  return res;
+};
+console.log(generateParenthesis3(2))
