@@ -78,7 +78,36 @@ var addTwoNumbers = function(l1, l2) {
   }
   return head.next
 };
-
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function(l1, l2) {
+  let head = new ListNode(-1)
+  let node = head
+  let carry = 0
+  let l = l1,
+      r = l2
+  while(l || r) {
+    let value = carry
+    if (l) {
+      value +=  l.val
+      l = l.next
+    }
+    if (r) {
+      value += r.val
+      r = r.next
+    }
+    carry = Math.floor(value / 10)
+    node.next = new ListNode(value % 10)
+    node = node.next
+  }
+  if (carry) {
+    node.next = new ListNode(carry)
+  }
+  return head.next
+}
 let l1 = new ListNode(2, new ListNode(4, new ListNode(3)))
 let l2 = new ListNode(5, new ListNode(6, new ListNode(4)))
 // let l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))

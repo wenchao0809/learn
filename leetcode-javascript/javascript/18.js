@@ -20,7 +20,7 @@ var fourSum = function(nums, target) {
 
 /**
  * @param {number[]} nums
- * @param {number} target
+ * @param {number} start
  * @param {start} target
  * @return {number[][]}
  */
