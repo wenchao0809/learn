@@ -49,8 +49,29 @@ function inorderTraversalLoop(root) {
   return vals
 }
 
+/**
+ * 
+ * @param {TreeNode} root 
+ * @returns {Number[]}
+ */
+ function inorderFor(root) {
+  const stack = []
+  const vals = []
+  let node = root
+  while(node || stack.length > 0) {
+    while(node) {
+      stack.push(node)
+      node = node.left
+    }
+    node = stack.pop()
+    vals.push(node.val)
+    node = node.right
+  }
+  return vals
+}
 // console.log(inorderTraversal(new TreeNode(1, null, new TreeNode(2, new TreeNode(3)))))
 // console.log(inorderTraversal(null))
-
-console.log(inorderTraversalLoop(new TreeNode(1, null, new TreeNode(2, new TreeNode(3)))))/
+const tree = new TreeNode(1, null, new TreeNode(2, new TreeNode(3)))
+console.log(inorderTraversalLoop(tree))
+console.log(inorderFor(tree))
 console.log(inorderTraversalLoop(null))
