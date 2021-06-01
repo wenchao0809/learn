@@ -18,7 +18,7 @@ const resolvePromise = (promise2, x, resolve, reject) => {
     try {
       // 为了判断 resolve 过的就不用再 reject 了（比如 reject 和 resolve 同时调用的时候）  Promise/A+ 2.3.3.1
       let then = x.then;
-      if (typeof then === 'function') { 
+      if (typeof then === 'function') {
         // 不要写成 x.then，直接 then.call 就可以了 因为 x.then 会再次取值，Object.defineProperty  Promise/A+ 2.3.3.3
         then.call(x, y => { // 根据 promise 的状态决定是成功还是失败
           if (called) return;
@@ -119,7 +119,7 @@ class MyPromise {
       throw new Error(`resolver ${resolver} is not a function`)
     }
     try {
-      resolver(this.#resolve, this.#reject)
+      resolver(this.#resolve.bind(this), this.#reject.bind(this))
     } catch (error) {
       this.#reject(error)
     }
