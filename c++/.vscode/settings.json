@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.wxml": "html",
+    "ostream": "cpp",
+    "iostream": "cpp"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+  },
+  "references": [
+      // @shopify/address/tsconfig.json
+    { "path": "../advanced-types" }
+  ]
+}
