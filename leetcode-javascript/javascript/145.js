@@ -11,8 +11,7 @@ class TreeNode {
  * @returns {number[]}
  */
 function postorder(root) {
-  let res = []
-  if (!root) return res
+  if (!root) []
   return [...postorder(root.left), ...postorder(root.right), root.val]
 }
 const node = new TreeNode(5, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6))

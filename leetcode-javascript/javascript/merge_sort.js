@@ -25,19 +25,13 @@ function mergeSort2(nums) {
   }
   return nums
 }
-/**
- * 
- * @param {number[]} left 
- * @param {number[]} right 
- * @returns {number[]}
- */
 function merge(left, right) {
   let r = []
   let i = 0, j = 0
   const l = left.length, rl = right.length
 
   while(true) {
-    while(left[i] < right[j]) r.push(left[i++])
+    while(left[i] <= right[j]) r.push(left[i++])
     while(right[j] < left[i]) r.push(right[j++])
     if (i >= l || j >= rl) break 
   }
@@ -51,7 +45,7 @@ function merge(left, right) {
  * let aux = 
  */
  function merge2(a, lo, mid, hi) {
-  let aux = [...a] // 复制 a到 aux
+  let aux = a.slice() // 复制 a到 aux
   let i = lo, j = mid + 1
   for (let k = lo; k <= hi; k++) {
     if (i > mid) {
@@ -88,4 +82,25 @@ function sort(nums, lo, hi) {
 }
 // console.log(mergeSort([2, 1, 6, 4, 3, 0, -1, -3]))
 // console.log(mergeSort2([2, 1, 6, 4, 3, 0, -1, -3]))
-console.log(mergeSort3([2, 1, 6]))
+
+function mergeSort4(nums, lo, hi) {
+  if (hi <= lo) return
+  const mid = Math.floor((lo + hi) / 2) 
+  mergeSort4(nums, lo, mid)
+  mergeSort4(nums, mid + 1, hi)
+  let tmp = []
+  let i = lo, j = mid + 1
+  while (i <= mid || j <= hi) {
+    if (i > mid || (j <= hi && nums[j] < nums[i])) {
+      tmp.push(nums[j])
+      j += 1
+    } else {
+      tmp.push(nums[i])
+      i += 1
+    }
+  }
+  nums.splice(lo, hi - lo + 1, ...tmp)
+}
+
+mergeSort4(a, 0, a.length - 1)
+console.log()

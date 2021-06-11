@@ -11,8 +11,7 @@ type Test = {
   a: () => string;
 }
 
-let b: Test
-b.a()
+
 
 // 联合类型
 type stringandnumber = string | number;
@@ -31,4 +30,4 @@ let t: tuple = ['1', 1]
 // 使用typeof 获取实例类型赋值
 type c = typeof t
 let d: c = t
- 
+ console.log(11111)

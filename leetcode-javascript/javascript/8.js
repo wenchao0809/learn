@@ -15,15 +15,15 @@ var myAtoi = function(s) {
     s = s.slice(1)
   } else if (first === '+') {
     s = s.slice(1)
-  } else if (isNaN(parseInt(first))) {
+  } else if (isNaN(Number(first))) {
     return 0
   }
   let i = 0
-  while(!isNaN(parseInt(s[i]))) ++i
+  while(!isNaN(Number(s[i]))&& s[i] !== ' ') ++i
   s = s.slice(0, i)
-  l = s.length
+  let l = s.length
   for (i = 0; i < l; i++) {
-    r += parseInt(s[i]) * Math.pow(10, l - (i + 1))
+    r += Number(s[i]) * Math.pow(10, l - (i + 1))
   }
   if (isNegative) r = 0 - r
   if (r < min) {
@@ -37,4 +37,4 @@ var myAtoi = function(s) {
 // console.log(myAtoi("   -42"))
 
 console.log(myAtoi("4193 with words"))
-console.log(myAtoi("-91283472332"))
+console.log(myAtoi("a788"))

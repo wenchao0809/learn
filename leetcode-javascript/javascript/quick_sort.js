@@ -28,6 +28,8 @@ function sort(nums, lo, hi) {
  */
 function partition(nums, lo, hi) {
   let i = lo, j = hi + 1
+  let pivot = Math.floor(Math.random() * (hi - lo + 1) + lo);
+  exch(nums, pivot, lo)
   const v = nums[lo]
   while (true) {
     while (nums[++i] < v) if (i === hi) break
