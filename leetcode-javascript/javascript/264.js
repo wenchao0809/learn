@@ -43,7 +43,7 @@ class MiniHeap {
     const heap = this.heap
     heap.push(num)
     let n = this.heap.length - 1
-    if (n >= 2) {
+    if (n >= 1) {
       while(n > 0) {
         const mid = Math.ceil(n / 2) - 1
         if (heap[n] < heap[mid]) {
@@ -59,6 +59,7 @@ class MiniHeap {
     const heap = this.heap
     const mini = heap[0]
     heap[0] = heap[heap.length - 1]
+    // 调整角度
     heap.length = heap.length - 1
     if (heap.length >= 2) {
       let n = 0

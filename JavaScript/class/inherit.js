@@ -6,7 +6,7 @@
  */
 class Super {
   x = 1
-  static testArray = [1]
+  // static testArray = [1]
   constructor() {
     debugger
   }
@@ -20,7 +20,7 @@ class Super {
 
 class Sub extends Super {
   y = 2
-  static testArray = [3, 1]
+  // static testArray = [3, 1]
   constructor() {
     super()
   }
@@ -72,39 +72,39 @@ console.log(sub.hasOwnProperty('testSuperOnInstance'))
  * ES5寄生组合式继承实现
  */
 
-function Super() {
-  this.x = 1
-}
+// function Super() {
+//   this.x = 1
+// }
 
-Super.testArray = [1]
+// Super.testArray = [1]
 
-Super.log =  function(msg) {
-  console.log('message', msg)
-}
+// Super.log =  function(msg) {
+//   console.log('message', msg)
+// }
 
-Super.prototype.test = function(msg) {
-  console.log('test message', msg)
-}
+// Super.prototype.test = function(msg) {
+//   console.log('test message', msg)
+// }
 
-function Sub() {
-  // 盗用构造函数继承实例属性
-  Super.apply(this)
-  this.y = 2
-}
+// function Sub() {
+//   // 盗用构造函数继承实例属性
+//   Super.apply(this)
+//   this.y = 2
+// }
 
-// 继承静态属性
-Sub.__proto__ = Super
+// // 继承静态属性
+// Sub.__proto__ = Super
 
-Sub.testSuperOnClass = function() {
-  super.log('test super on class')
-}
+// Sub.testSuperOnClass = function() {
+//   super.log('test super on class')
+// }
 
-// 原型继承实现方法的继承
-var p = Object.create(Super.prototype)
-p.constructor = Sub
-p.testSuperOnInstance = function() {
-  console.log(super.x)
-  // super()
-  super.test('test suepr on instance')
-}
-Sub.prototype = p
+// // 原型继承实现方法的继承
+// var p = Object.create(Super.prototype)
+// p.constructor = Sub
+// p.testSuperOnInstance = function() {
+//   console.log(super.x)
+//   // super()
+//   super.test('test suepr on instance')
+// }
+// Sub.prototype = p
